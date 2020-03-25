@@ -1,14 +1,14 @@
 {
-  "name": "webpack-demo",
+  "name": "frontframe",
   "version": "1.0.0",
-  "description": "",
+  "description": "基于webpack打包的前端vue框架搭建",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --progress",
     "build": "NODE_ENV=production webpack",
     "dll": "webpack --config webpack.dll.config.js --colors --display-modules"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [ "frontframe", "vue", "webpack", "element-ui" ],
+  "author": "PT",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
