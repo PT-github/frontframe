@@ -2,7 +2,7 @@
  * @Author: PT
  * @Date: 2020-03-24 18:06:19
  * @LastEditors: PT
- * @LastEditTime: 2020-03-25 15:48:54
+ * @LastEditTime: 2020-03-25 21:32:13
  * @Description: plugins配置
  */
 const path = require('path')
@@ -23,6 +23,11 @@ module.exports = function (devMode) {
     //   // dll过程生成的manifest文件
     //   manifest
     // }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        ENV_CONFIG: '"' + (process.env.ENV_CONFIG || 'dev') + '"'
+      }
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional

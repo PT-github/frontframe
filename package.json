@@ -4,7 +4,11 @@
   "description": "基于webpack打包的前端vue框架搭建",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --progress",
-    "build": "NODE_ENV=production webpack",
+    "test": "ENV_CONFIG=test NODE_ENV=development webpack-dev-server --progress",
+    "pro": "ENV_CONFIG=pro NODE_ENV=development webpack-dev-server --progress",
+    "build:dev": "NODE_ENV=production webpack-dev-server --progress",
+    "build:test": "ENV_CONFIG=test NODE_ENV=production webpack-dev-server --progress",
+    "build": "ENV_CONFIG=pro NODE_ENV=production webpack",
     "dll": "webpack --config webpack.dll.config.js --colors --display-modules"
   },
   "keywords": [ "frontframe", "vue", "webpack", "element-ui" ],
