@@ -2,7 +2,7 @@
  * @Author: PT
  * @Date: 2020-03-24 17:50:38
  * @LastEditors: PT
- * @LastEditTime: 2020-03-25 15:31:00
+ * @LastEditTime: 2020-03-26 17:05:10
  * @Description: webpack打包配置
  */
 const devMode = process.env.NODE_ENV !== 'production' // 是否为开发模式
@@ -22,6 +22,7 @@ const config = {
   },
   devtool: devMode ? 'cheap-module-eval-source-map' : '', // 开发模式下使用
   devServer: {
+    host: '0.0.0.0',
     hot: true,
     port: '3000', // 默认是8080
     quiet: false, // 默认不启用

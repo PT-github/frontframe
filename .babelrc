@@ -10,11 +10,11 @@
       }
     ],
     [
-      "component",
+      "import",
       {
-        "libraryName": "element-ui",
-        "style": true,
-        "styleLibraryName": "theme-chalk"
+        "libraryName": "vant",
+        "libraryDirectory": "es",
+        "style": true
       }
     ]
   ]

@@ -2,14 +2,14 @@
  * @Author: PT
  * @Date: 2020-03-25 14:42:23
  * @LastEditors: PT
- * @LastEditTime: 2020-03-25 17:40:56
+ * @LastEditTime: 2020-03-26 16:20:51
  * @Description: 
  -->
 <template>
   <div class="app">
-    <div class="container">
+    <!-- <div class="container"> -->
       <router-view></router-view>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -28,15 +28,8 @@ export default {
 </script>
 <style lang='less' scoped>
 .app {
-  background: #CCC;
+  background: #FFFFFF;
   width: 100%;
   height: 100%;
-  display: flex;
-  .container {
-    background: #FFF;
-    margin: 10px;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-  }
 }
 </style>

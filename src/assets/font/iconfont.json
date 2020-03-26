@@ -1,0 +1,16 @@
+{
+  "id": "1716422",
+  "name": "shop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "shop",
+  "glyphs": [
+    {
+      "icon_id": "12215235",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    }
+  ]
+}
