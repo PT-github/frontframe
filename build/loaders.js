@@ -2,7 +2,7 @@
  * @Author: PT
  * @Date: 2020-03-24 17:54:14
  * @LastEditors: PT
- * @LastEditTime: 2020-03-26 10:24:18
+ * @LastEditTime: 2020-03-26 10:32:49
  * @Description: loader配置
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 将js中的css抽离出来 减少js包
@@ -88,28 +88,28 @@ module.exports = function (devMode) {
       test: /\.vue$/,
       loader: 'vue-loader'
     },
-    {
-      test: /\.(html)$/,
-      use: {
-        loader: 'html-loader',
-        options: {
-          attributes: {
-            list: [
-              {
-                tag: 'img',
-                attribute: 'src',
-                type: 'src'
-              },
-              {
-                tag: 'video',
-                attribute: 'src',
-                type: 'src'
-              }
-            ]
-          }
-        }
-      }
-    }
+    // {
+    //   test: /\.(html)$/,
+    //   use: {
+    //     loader: 'html-loader',
+    //     options: {
+    //       attributes: {
+    //         list: [
+    //           {
+    //             tag: 'img',
+    //             attribute: 'src',
+    //             type: 'src'
+    //           },
+    //           {
+    //             tag: 'video',
+    //             attribute: 'src',
+    //             type: 'src'
+    //           }
+    //         ]
+    //       }
+    //     }
+    //   }
+    // }
   ]
   return loaders
 }
