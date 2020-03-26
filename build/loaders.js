@@ -2,10 +2,13 @@
  * @Author: PT
  * @Date: 2020-03-24 17:54:14
  * @LastEditors: PT
- * @LastEditTime: 2020-03-25 17:36:24
+ * @LastEditTime: 2020-03-26 10:02:46
  * @Description: loader配置
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 将js中的css抽离出来 减少js包
+const path = require('path');
+
+const SRC = path.resolve(__dirname, 'node_modules');
 module.exports = function (devMode) {
   const loaders = [
     {
@@ -39,7 +42,24 @@ module.exports = function (devMode) {
       // exclude: /node_modules/
     },
     {
-      test: /\.(png|jpg|gif|jpeg|webp|svg|eot|ttf|woff|woff2)$/,
+      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 10240,
+            fallback: {
+              loader: 'file-loader',
+              options: {
+                name: devMode ? 'fonts/[name].[ext]' : 'fonts/[name].[hash:6].[ext]'
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      test: /\.(png|jpg|gif|jpeg|webp|svg)$/,
       use: [
         {
           loader: 'url-loader',
@@ -59,8 +79,38 @@ module.exports = function (devMode) {
       // exclude: /node_modules/
     },
     {
+      test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/,
+      loader: 'file-loader',
+      options: {
+        esModule: false,
+        name: devMode ? 'media/[name].[ext]' : 'media/[name].[hash:6].[ext]'
+      }
+    },
+    {
       test: /\.vue$/,
       loader: 'vue-loader'
+    },
+    {
+      test: /\.(html)$/,
+      use: {
+        loader: 'html-loader',
+        options: {
+          attributes: {
+            list: [
+              {
+                tag: 'img',
+                attribute: 'src',
+                type: 'src'
+              },
+              {
+                tag: 'video',
+                attribute: 'src',
+                type: 'src'
+              }
+            ]
+          }
+        }
+      }
     }
   ]
   return loaders

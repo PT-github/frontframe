@@ -11,7 +11,12 @@
     "build": "ENV_CONFIG=pro NODE_ENV=production webpack",
     "dll": "webpack --config webpack.dll.config.js --colors --display-modules"
   },
-  "keywords": [ "frontframe", "vue", "webpack", "element-ui" ],
+  "keywords": [
+    "frontframe",
+    "vue",
+    "webpack",
+    "element-ui"
+  ],
   "author": "PT",
   "license": "ISC",
   "devDependencies": {
@@ -33,6 +38,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
+    "html-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "html-withimg-loader": "^0.1.16",
     "less": "^3.11.1",
